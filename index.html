@@ -3,22 +3,321 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tigo Business SV</title>
+    <title>Soluciones Empresariales | Tigo Business SV</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f9;
-            color: #1f2937;
-            text-align: center;
-            padding: 50px;
+        :root {
+            --primary-blue: #0033a0;
+            --secondary-blue: #002270;
+            --accent-blue: #0080ff;
+            --gray-dark: #2c3e50;
+            --gray-light: #f4f6f9;
+            --gray-border: #e0e6ed;
+            --white: #ffffff;
         }
-        h1 {
-            color: #0033a0;
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--gray-light);
+            color: var(--gray-dark);
+            line-height: 1.6;
+        }
+
+        /* Encabezado y Navegación */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Banner Principal (Hero) */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        /* Sección de Planes / Servicios */
+        .container {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid var(--gray-border);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 180px;
+            background-color: #d1d5db;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--gray-dark);
+            margin: 1rem 0;
+        }
+
+        /* Formulario de Compra / Contacto */
+        .form-container {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            max-width: 700px;
+            margin: 4rem auto;
+            border-top: 5px solid var(--primary-blue);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--gray-border);
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .btn-submit {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--secondary-blue);
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: var(--gray-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 4rem;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
-    <h1>Bienvenido a Tigo Business SV</h1>
-    <p>Sitio web en construcción.</p>
+
+    <!-- Encabezado -->
+    <header>
+        <div class="logo">
+            <!-- Espacio reservado para Logo -->
+            <span>Tigo Business SV</span>
+        </div>
+        <nav>
+            <a href="#servicios">Servicios</a>
+            <a href="#solicitar">Solicitar</a>
+        </nav>
+    </header>
+
+    <!-- Banner Principal -->
+    <section class="hero">
+        <h1>Conectividad de Alta Velocidad para tu Negocio</h1>
+        <p>Potencia tu empresa con la mejor velocidad, estabilidad y soluciones digitales diseñadas para emprendedores y pymes en El Salvador.</p>
+    </section>
+
+    <!-- Sección de Planes/Servicios -->
+    <section class="container" id="servicios">
+        <h2 class="section-title">Nuestras Soluciones</h2>
+        <div class="cards-grid">
+            
+            <!-- Tarjeta 1 -->
+            <div class="card">
+                <div class="card-img" id="img-plan-1">
+                    <!-- Aquí iría la imagen 1 -->
+                    [Imagen Plan Emprendedor]
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Plan Emprendedor</h3>
+                    <p>Internet de alta velocidad y estabilidad ideal para pequeños negocios y comercios.</p>
+                    <div class="price">Desde $35/mes</div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="card">
+                <div class="card-img" id="img-plan-2">
+                    <!-- Aquí iría la imagen 2 -->
+                    [Imagen Plan Empresarial]
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Internet Empresarial</h3>
+                    <p>Conexión dedicada y enlace corporativo con soporte prioritario 24/7.</p>
+                    <div class="price">Desde $60/mes</div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="card">
+                <div class="card-img" id="img-plan-3">
+                    <!-- Aquí iría la imagen 3 -->
+                    [Imagen Soluciones Móviles]
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Planes Corporativos Móviles</h3>
+                    <p>Flotas móviles con gigas ilimitados y llamadas para todo tu equipo de trabajo.</p>
+                    <div class="price">Desde $25/mes</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Formulario de Compra / Solicitud -->
+    <section class="container" id="solicitar">
+        <div class="form-container">
+            <h2 class="section-title" style="margin-bottom: 1rem;">Solicitar Servicio</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">Completa el formulario y un asesor se pondrá en contacto contigo de inmediato.</p>
+            
+            <form action="https://formspree.io/f/xbjnqwea" method="POST">
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo o Nombre de Empresa:</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez / Comercial El Sol">
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Teléfono / WhatsApp de Contacto:</label>
+                    <input type="tel" id="telefono" name="telefono" required placeholder="Ej: 7000-0000">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="servicio">Servicio de Interés:</label>
+                    <select id="servicio" name="servicio" required>
+                        <option value="">-- Selecciona una opción --</option>
+                        <option value="Plan Emprendedor">Plan Emprendedor</option>
+                        <option value="Internet Empresarial">Internet Empresarial</option>
+                        <option value="Planes Corporativos Moviles">Planes Corporativos Móviles</option>
+                        <option value="Otro">Consulta Personalizada</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Ubicación o comentarios adicionales:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Indica el municipio/departamento donde necesitas el servicio..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Enviar Solicitud de Contratación</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026 Soluciones Empresariales - Tigo Business SV. Todos los derechos reservados.</p>
+    </footer>
+
 </body>
 </html>
