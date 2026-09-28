@@ -227,7 +227,7 @@
             <!-- Tarjeta 1: Plan Emprendedor -->
             <div class="card">
                 <div class="card-img-container">
-                    <img src="OFERTAS.jpg" alt="Plan Emprendedor" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'color:#6b7280;padding:20px;\'>[Subir imagen: ofertas.jpg]</span>';">
+                    <img src="OFERTAS" alt="Plan Emprendedor" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'color:#6b7280;padding:20px;\'>[Error al cargar imagen]</span>';">
                 </div>
                 <div class="card-content">
                     <h3 class="card-title">Plan Emprendedor</h3>
@@ -288,8 +288,8 @@
     <!-- Script para enviar datos a WhatsApp -->
     <script>
         function sendToWhatsApp(event) {
-            // Número de WhatsApp al que llegarán los mensajes (código de El Salvador +503)
-            var whatsappNumber = "50368450914"; // <--- CAMBIA ESTE NÚMERO POR TU NÚMERO DE WHATSAPP REAL
+            // Número de WhatsApp de recepción (código El Salvador +503)
+            var whatsappNumber = "50370000000"; // <--- Recuerda colocar tu número real aquí cuando desees
 
             var nombre = document.getElementById("nombre").value;
             var telefono = document.getElementById("telefono").value;
@@ -297,7 +297,6 @@
             var plan = document.getElementById("plan").value;
             var ubicacion = document.getElementById("ubicacion").value;
 
-            // Mensaje formateado para WhatsApp
             var mensaje = "¡Hola! Quisiera solicitar información sobre contratación:%0A%0A" +
                 "*Nombre:* " + encodeURIComponent(nombre) + "%0A" +
                 "*Teléfono:* " + encodeURIComponent(telefono) + "%0A" +
@@ -307,7 +306,6 @@
 
             var whatsappUrl = "https://wa.me/" + whatsappNumber + "?text=" + mensaje;
 
-            // Abrir WhatsApp en una nueva pestaña
             window.open(whatsappUrl, '_blank');
         }
     </script>
