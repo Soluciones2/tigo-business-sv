@@ -13,6 +13,8 @@
             --gray-light: #f4f6f9;
             --gray-border: #e0e6ed;
             --white: #ffffff;
+            --whatsapp-green: #25d366;
+            --whatsapp-dark: #128c7e;
         }
 
         * {
@@ -28,7 +30,7 @@
             line-height: 1.6;
         }
 
-        /* Encabezado y Navegación */
+        /* Encabezado */
         header {
             background-color: var(--primary-blue);
             color: var(--white);
@@ -42,9 +44,6 @@
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
 
         nav a {
@@ -58,29 +57,29 @@
             color: var(--accent-blue);
         }
 
-        /* Banner Principal (Hero) */
+        /* Hero / Banner */
         .hero {
             background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
             color: var(--white);
-            padding: 4rem 2rem;
+            padding: 3.5rem 2rem;
             text-align: center;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             margin-bottom: 1rem;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             max-width: 700px;
-            margin: 0 auto 2rem;
+            margin: 0 auto;
             opacity: 0.9;
         }
 
-        /* Sección de Planes / Servicios */
+        /* Planes y Ofertas */
         .container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 3rem auto;
             padding: 0 1rem;
         }
@@ -96,13 +95,14 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
+            justify-content: center;
         }
 
         .card {
             background: var(--white);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
             border: 1px solid var(--gray-border);
             text-align: center;
             transition: transform 0.3s ease;
@@ -112,18 +112,17 @@
             transform: translateY(-5px);
         }
 
-        .card-img {
+        .card-img-container {
             width: 100%;
-            height: 180px;
-            background-color: #d1d5db;
+            height: 220px;
+            background-color: #e5e7eb;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #6b7280;
-            font-size: 0.9rem;
+            overflow: hidden;
         }
 
-        .card-img img {
+        .card-img-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -140,10 +139,10 @@
         }
 
         .price {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: bold;
             color: var(--gray-dark);
-            margin: 1rem 0;
+            margin: 0.8rem 0;
         }
 
         /* Formulario de Compra / Contacto */
@@ -151,20 +150,20 @@
             background: var(--white);
             padding: 2.5rem;
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            max-width: 700px;
-            margin: 4rem auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            max-width: 650px;
+            margin: 3rem auto;
             border-top: 5px solid var(--primary-blue);
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             text-align: left;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
             font-weight: 600;
         }
 
@@ -193,7 +192,6 @@
             background-color: var(--secondary-blue);
         }
 
-        /* Pie de página */
         footer {
             background-color: var(--gray-dark);
             color: var(--white);
@@ -208,12 +206,9 @@
 
     <!-- Encabezado -->
     <header>
-        <div class="logo">
-            <!-- Espacio reservado para Logo -->
-            <span>Tigo Business SV</span>
-        </div>
+        <div class="logo">Tigo Business SV</div>
         <nav>
-            <a href="#servicios">Servicios</a>
+            <a href="#ofertas">Ofertas</a>
             <a href="#solicitar">Solicitar</a>
         </nav>
     </header>
@@ -221,94 +216,66 @@
     <!-- Banner Principal -->
     <section class="hero">
         <h1>Conectividad de Alta Velocidad para tu Negocio</h1>
-        <p>Potencia tu empresa con la mejor velocidad, estabilidad y soluciones digitales diseñadas para emprendedores y pymes en El Salvador.</p>
+        <p>Potencia tu emprendimiento o empresa con las mejores soluciones de internet y telefonía en El Salvador.</p>
     </section>
 
-    <!-- Sección de Planes/Servicios -->
-    <section class="container" id="servicios">
-        <h2 class="section-title">Nuestras Soluciones</h2>
+    <!-- Sección de Ofertas -->
+    <section class="container" id="ofertas">
+        <h2 class="section-title">Ofertas Disponibles</h2>
         <div class="cards-grid">
             
-            <!-- Tarjeta 1 -->
+            <!-- Tarjeta 1: Plan Emprendedor -->
             <div class="card">
-                <div class="card-img" id="img-plan-1">
-                   <img src="ofertas.jpg" alt="Ofertas Tigo Business">
+                <div class="card-img-container">
+                    <img src="ofertas.jpg" alt="Plan Emprendedor" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'color:#6b7280;padding:20px;\'>[Subir imagen: ofertas.jpg]</span>';">
                 </div>
                 <div class="card-content">
                     <h3 class="card-title">Plan Emprendedor</h3>
-                    <p>Internet de alta velocidad y estabilidad ideal para pequeños negocios y comercios.</p>
-                    <div class="price">Desde $35/mes</div>
-                </div>
-            </div>
-
-            <!-- Tarjeta 2 -->
-            <div class="card">
-                <div class="card-img" id="img-plan-2">
-                    <!-- Aquí iría la imagen 2 -->
-                    [Imagen Plan Empresarial]
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Internet Empresarial</h3>
-                    <p>Conexión dedicada y enlace corporativo con soporte prioritario 24/7.</p>
-                    <div class="price">Desde $60/mes</div>
-                </div>
-            </div>
-
-            <!-- Tarjeta 3 -->
-            <div class="card">
-                <div class="card-img" id="img-plan-3">
-                    <!-- Aquí iría la imagen 3 -->
-                    [Imagen Soluciones Móviles]
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Planes Corporativos Móviles</h3>
-                    <p>Flotas móviles con gigas ilimitados y llamadas para todo tu equipo de trabajo.</p>
-                    <div class="price">Desde $25/mes</div>
+                    <p>Internet rápido y estable diseñado para emprendedores, pequeños negocios y empresas.</p>
+                    <div class="price">$14.00 <span style="font-size: 0.9rem; font-weight: normal;">/ mes</span></div>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- Formulario de Compra / Solicitud -->
+    <!-- Formulario vinculado a Formspree y WhatsApp -->
     <section class="container" id="solicitar">
         <div class="form-container">
-            <h2 class="section-title" style="margin-bottom: 1rem;">Solicitar Servicio</h2>
-            <p style="text-align: center; margin-bottom: 2rem;">Completa el formulario y un asesor se pondrá en contacto contigo de inmediato.</p>
+            <h2 class="section-title" style="margin-bottom: 0.5rem;">Solicitar Contratación</h2>
+            <p style="text-align: center; margin-bottom: 1.5rem; color: #666;">Ingresa tus datos para procesar tu solicitud por correo y WhatsApp de inmediato.</p>
             
-            <form action="https://formspree.io/f/xbjnqwea" method="POST">
+            <form id="contactForm" action="https://formspree.io/f/xyezlwaa" method="POST" onsubmit="sendToWhatsApp(event)">
+                
                 <div class="form-group">
-                    <label for="nombre">Nombre Completo o Nombre de Empresa:</label>
-                    <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez / Comercial El Sol">
+                    <label for="nombre">Nombre Completo o Empresa:</label>
+                    <input type="text" id="nombre" name="Nombre" required placeholder="Ej. Rodrigo Guevara / Comercial El Sol">
                 </div>
 
                 <div class="form-group">
                     <label for="telefono">Teléfono / WhatsApp de Contacto:</label>
-                    <input type="tel" id="telefono" name="telefono" required placeholder="Ej: 7000-0000">
+                    <input type="tel" id="telefono" name="Telefono" required placeholder="Ej. 7000-0000">
                 </div>
 
                 <div class="form-group">
                     <label for="email">Correo Electrónico:</label>
-                    <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com">
+                    <input type="email" id="email" name="Correo" required placeholder="tu-correo@ejemplo.com">
                 </div>
 
                 <div class="form-group">
-                    <label for="servicio">Servicio de Interés:</label>
-                    <select id="servicio" name="servicio" required>
-                        <option value="">-- Selecciona una opción --</option>
-                        <option value="Plan Emprendedor">Plan Emprendedor</option>
-                        <option value="Internet Empresarial">Internet Empresarial</option>
-                        <option value="Planes Corporativos Moviles">Planes Corporativos Móviles</option>
-                        <option value="Otro">Consulta Personalizada</option>
+                    <label for="plan">Plan de Interés:</label>
+                    <select id="plan" name="Plan_Seleccionado" required>
+                        <option value="Plan Emprendedor $14.00" selected>Plan Emprendedor - $14.00/mes</option>
+                        <option value="Consulta General">Otra consulta / Cotización especial</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="mensaje">Ubicación o comentarios adicionales:</label>
-                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Indica el municipio/departamento donde necesitas el servicio..."></textarea>
+                    <label for="ubicacion">Ubicación / Dirección de instalación:</label>
+                    <textarea id="ubicacion" name="Ubicacion" rows="3" placeholder="Indica el municipio o dirección para verificar cobertura..."></textarea>
                 </div>
 
-                <button type="submit" class="btn-submit">Enviar Solicitud de Contratación</button>
+                <button type="submit" class="btn-submit">Enviar Solicitud por Correo y WhatsApp</button>
             </form>
         </div>
     </section>
@@ -317,6 +284,33 @@
     <footer>
         <p>&copy; 2026 Soluciones Empresariales - Tigo Business SV. Todos los derechos reservados.</p>
     </footer>
+
+    <!-- Script para enviar datos a WhatsApp -->
+    <script>
+        function sendToWhatsApp(event) {
+            // Número de WhatsApp al que llegarán los mensajes (código de El Salvador +503)
+            var whatsappNumber = "50368450914"; // <--- CAMBIA ESTE NÚMERO POR TU NÚMERO DE WHATSAPP REAL
+
+            var nombre = document.getElementById("nombre").value;
+            var telefono = document.getElementById("telefono").value;
+            var email = document.getElementById("email").value;
+            var plan = document.getElementById("plan").value;
+            var ubicacion = document.getElementById("ubicacion").value;
+
+            // Mensaje formateado para WhatsApp
+            var mensaje = "¡Hola! Quisiera solicitar información sobre contratación:%0A%0A" +
+                "*Nombre:* " + encodeURIComponent(nombre) + "%0A" +
+                "*Teléfono:* " + encodeURIComponent(telefono) + "%0A" +
+                "*Correo:* " + encodeURIComponent(email) + "%0A" +
+                "*Plan:* " + encodeURIComponent(plan) + "%0A" +
+                "*Ubicación:* " + encodeURIComponent(ubicacion);
+
+            var whatsappUrl = "https://wa.me/" + whatsappNumber + "?text=" + mensaje;
+
+            // Abrir WhatsApp en una nueva pestaña
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
 
 </body>
 </html>
