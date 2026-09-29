@@ -117,27 +117,22 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.12);
         }
 
-        /* Imagen del contenedor ajustada */
+        /* Imagen en su estado original (sin estirar) */
         .card-img-container {
             width: 100%;
-            height: 280px;
+            height: 260px;
             background-color: #ffffff;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            padding: 0;
+            padding: 10px;
         }
 
         .card-img-container img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-        }
-
-        /* Fuerza a que la imagen del medio se estire al mismo tamaño */
-        .card-img-container.img-soluciones img {
-            object-fit: fill !important;
+            object-fit: contain;
         }
 
         /* Etiquetas para rellenar el espacio en blanco debajo de la imagen */
@@ -149,6 +144,7 @@
             padding: 0.6rem 1rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            border-top: 1px solid var(--gray-border);
             border-bottom: 1px solid var(--gray-border);
         }
 
@@ -303,7 +299,7 @@
 
             <!-- Tarjeta 2: Soluciones -->
             <div class="card">
-                <div class="card-img-container img-soluciones">
+                <div class="card-img-container">
                     <img src="SOLUCIONES.png" alt="Soluciones Empresariales" onerror="this.onerror=null; this.src='soluciones.png';">
                 </div>
                 <div class="feature-tag">Servicios Digitales & Cloud</div>
