@@ -34,7 +34,7 @@
         header {
             background-color: var(--primary-blue);
             color: var(--white);
-            padding: 1rem 2rem;
+            padding: 1.2rem 2.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -42,7 +42,7 @@
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             font-weight: bold;
         }
 
@@ -50,7 +50,8 @@
             color: var(--white);
             text-decoration: none;
             margin-left: 20px;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 1.1rem;
         }
 
         nav a:hover {
@@ -61,79 +62,91 @@
         .hero {
             background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
             color: var(--white);
-            padding: 3.5rem 2rem;
+            padding: 4rem 2rem;
             text-align: center;
         }
 
         .hero h1 {
-            font-size: 2.3rem;
+            font-size: 2.6rem;
             margin-bottom: 1rem;
         }
 
         .hero p {
-            font-size: 1.1rem;
-            max-width: 700px;
+            font-size: 1.25rem;
+            max-width: 800px;
             margin: 0 auto;
-            opacity: 0.9;
+            opacity: 0.95;
         }
 
-        /* Planes y Ofertas */
+        /* Planes y Ofertas ampliados */
         .container {
-            max-width: 1100px;
-            margin: 3rem auto;
-            padding: 0 1rem;
+            max-width: 1300px; /* Ampliado para mayor espacio horizontal */
+            margin: 3.5rem auto;
+            padding: 0 1.5rem;
         }
 
         .section-title {
             text-align: center;
             color: var(--primary-blue);
-            margin-bottom: 2rem;
-            font-size: 2rem;
+            margin-bottom: 2.5rem;
+            font-size: 2.4rem;
         }
 
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Tarjetas más anchas */
+            gap: 2.5rem;
             justify-content: center;
         }
 
         .card {
             background: var(--white);
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
             border: 1px solid var(--gray-border);
             text-align: center;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-7px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
         }
 
+        /* Imagen del contenedor más alta */
         .card-img-container {
             width: 100%;
-            height: 240px;
+            height: 320px; /* Altura incrementada de 240px a 320px */
             background-color: #ffffff;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            padding: 10px;
+            padding: 12px;
         }
 
         .card-img-container img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Muestra la imagen completa sin recortarla */
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        /* Ajuste específico para la imagen del medio (Soluciones) */
+        .card-img-container.img-soluciones {
+            padding: 4px;
+        }
+
+        .card-img-container.img-soluciones img {
+            transform: scale(1.08); /* Zoom ligero para resaltar */
         }
 
         .card-content {
-            padding: 1.5rem;
+            padding: 2rem 1.8rem;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -142,55 +155,63 @@
 
         .card-title {
             color: var(--primary-blue);
-            margin-bottom: 0.5rem;
-            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.6rem; /* Título más grande */
+            font-weight: 700;
+        }
+
+        .card-description {
+            font-size: 1.15rem; /* Texto descriptivo más grande */
+            color: var(--gray-dark);
+            line-height: 1.6;
         }
 
         .price {
-            font-size: 1.8rem;
+            font-size: 2.1rem; /* Precio más destacado */
             font-weight: bold;
             color: var(--gray-dark);
-            margin: 0.8rem 0;
+            margin: 1.2rem 0 0.5rem 0;
         }
 
         /* Formulario de Compra / Contacto */
         .form-container {
             background: var(--white);
-            padding: 2.5rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-            max-width: 650px;
-            margin: 3rem auto;
-            border-top: 5px solid var(--primary-blue);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            max-width: 750px;
+            margin: 4rem auto;
+            border-top: 6px solid var(--primary-blue);
         }
 
         .form-group {
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.5rem;
             text-align: left;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.5rem;
             font-weight: 600;
+            font-size: 1.1rem;
         }
 
         .form-group input, .form-group select, .form-group textarea {
             width: 100%;
-            padding: 0.8rem;
+            padding: 0.9rem;
             border: 1px solid var(--gray-border);
-            border-radius: 5px;
-            font-size: 1rem;
+            border-radius: 6px;
+            font-size: 1.05rem;
         }
 
         .btn-submit {
             background-color: var(--primary-blue);
             color: var(--white);
             border: none;
-            padding: 1rem 2rem;
-            font-size: 1.1rem;
+            padding: 1.2rem 2rem;
+            font-size: 1.2rem;
             font-weight: bold;
-            border-radius: 5px;
+            border-radius: 6px;
             cursor: pointer;
             width: 100%;
             transition: background 0.3s;
@@ -204,9 +225,9 @@
             background-color: var(--gray-dark);
             color: var(--white);
             text-align: center;
-            padding: 1.5rem;
-            margin-top: 4rem;
-            font-size: 0.9rem;
+            padding: 2rem;
+            margin-top: 5rem;
+            font-size: 1rem;
         }
     </style>
 </head>
@@ -240,21 +261,21 @@
                 <div class="card-content">
                     <div>
                         <h3 class="card-title">Plan Emprendedor</h3>
-                        <p>Internet rápido y estable diseñado para emprendedores, pequeños negocios y empresas.</p>
+                        <p class="card-description">Internet rápido y estable diseñado para emprendedores, pequeños negocios y empresas.</p>
                     </div>
-                    <div class="price">$14.00 <span style="font-size: 0.9rem; font-weight: normal;">/ mes</span></div>
+                    <div class="price">$14.00 <span style="font-size: 1rem; font-weight: normal;">/ mes</span></div>
                 </div>
             </div>
 
-            <!-- Tarjeta 2: Soluciones -->
+            <!-- Tarjeta 2: Soluciones (Con realce especial en la imagen) -->
             <div class="card">
-                <div class="card-img-container">
+                <div class="card-img-container img-soluciones">
                     <img src="SOLUCIONES.png" alt="Soluciones Empresariales" onerror="this.onerror=null; this.src='soluciones.png';">
                 </div>
                 <div class="card-content">
                     <div>
                         <h3 class="card-title">Soluciones</h3>
-                        <p>Planes a la medida con servicios integrados de conectividad y herramientas digitales.</p>
+                        <p class="card-description">Planes a la medida con servicios integrados de conectividad y herramientas digitales.</p>
                     </div>
                     <div class="price">Cotizar</div>
                 </div>
@@ -268,7 +289,7 @@
                 <div class="card-content">
                     <div>
                         <h3 class="card-title">Negocios</h3>
-                        <p>Infraestructura robusta para medianas y grandes empresas con soporte corporativo.</p>
+                        <p class="card-description">Infraestructura robusta para medianas y grandes empresas con soporte corporativo.</p>
                     </div>
                     <div class="price">Cotizar</div>
                 </div>
@@ -280,8 +301,8 @@
     <!-- Formulario vinculado a Formspree y WhatsApp -->
     <section class="container" id="solicitar">
         <div class="form-container">
-            <h2 class="section-title" style="margin-bottom: 0.5rem;">Solicitar Contratación</h2>
-            <p style="text-align: center; margin-bottom: 1.5rem; color: #666;">Ingresa tus datos para procesar tu solicitud por correo y WhatsApp de inmediato.</p>
+            <h2 class="section-title" style="margin-bottom: 0.5rem; font-size: 2.1rem;">Solicitar Contratación</h2>
+            <p style="text-align: center; margin-bottom: 1.8rem; color: #666; font-size: 1.1rem;">Ingresa tus datos para procesar tu solicitud por correo y WhatsApp de inmediato.</p>
             
             <form id="contactForm" action="https://formspree.io/f/xyezlwaa" method="POST" onsubmit="sendToWhatsApp(event)">
                 
