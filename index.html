@@ -80,7 +80,7 @@
 
         /* Planes y Ofertas ampliados */
         .container {
-            max-width: 1300px; /* Ampliado para mayor espacio horizontal */
+            max-width: 1300px;
             margin: 3.5rem auto;
             padding: 0 1.5rem;
         }
@@ -94,7 +94,7 @@
 
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Tarjetas más anchas */
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2.5rem;
             justify-content: center;
         }
@@ -117,36 +117,64 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.12);
         }
 
-        /* Imagen del contenedor más alta */
+        /* Imagen del contenedor ajustada */
         .card-img-container {
             width: 100%;
-            height: 320px; /* Altura incrementada de 240px a 320px */
+            height: 280px;
             background-color: #ffffff;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            padding: 12px;
+            padding: 0;
         }
 
         .card-img-container img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
-            transition: transform 0.3s ease;
+            object-fit: cover;
         }
 
-        /* Ajuste específico para la imagen del medio (Soluciones) */
-        .card-img-container.img-soluciones {
-            padding: 4px;
-        }
-
+        /* Fuerza a que la imagen del medio se estire al mismo tamaño */
         .card-img-container.img-soluciones img {
-            transform: scale(1.08); /* Zoom ligero para resaltar */
+            object-fit: fill !important;
+        }
+
+        /* Etiquetas para rellenar el espacio en blanco debajo de la imagen */
+        .feature-tag {
+            background-color: #eef4ff;
+            color: var(--primary-blue);
+            font-size: 0.95rem;
+            font-weight: 700;
+            padding: 0.6rem 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--gray-border);
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 1rem 1.5rem 0.5rem 1.5rem;
+            text-align: left;
+            font-size: 1rem;
+            color: #4a5568;
+        }
+
+        .feature-list li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            color: var(--primary-blue);
+            font-weight: bold;
+            margin-right: 8px;
         }
 
         .card-content {
-            padding: 2rem 1.8rem;
+            padding: 1.5rem 1.8rem 2rem 1.8rem;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -155,19 +183,19 @@
 
         .card-title {
             color: var(--primary-blue);
-            margin-bottom: 0.8rem;
-            font-size: 1.6rem; /* Título más grande */
+            margin-bottom: 0.6rem;
+            font-size: 1.6rem;
             font-weight: 700;
         }
 
         .card-description {
-            font-size: 1.15rem; /* Texto descriptivo más grande */
+            font-size: 1.05rem;
             color: var(--gray-dark);
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         .price {
-            font-size: 2.1rem; /* Precio más destacado */
+            font-size: 2.1rem;
             font-weight: bold;
             color: var(--gray-dark);
             margin: 1.2rem 0 0.5rem 0;
@@ -258,6 +286,12 @@
                 <div class="card-img-container">
                     <img src="emprendedor14.png" alt="Plan Emprendedor" onerror="this.onerror=null; this.src='emprendedor14.jpg';">
                 </div>
+                <div class="feature-tag">Movilidad & Conectividad</div>
+                <ul class="feature-list">
+                    <li>Redes sociales e Internet móvil</li>
+                    <li>Minutos a todas las redes</li>
+                    <li>Planes flexibles a 12 meses</li>
+                </ul>
                 <div class="card-content">
                     <div>
                         <h3 class="card-title">Plan Emprendedor</h3>
@@ -267,11 +301,17 @@
                 </div>
             </div>
 
-            <!-- Tarjeta 2: Soluciones (Con realce especial en la imagen) -->
+            <!-- Tarjeta 2: Soluciones -->
             <div class="card">
                 <div class="card-img-container img-soluciones">
                     <img src="SOLUCIONES.png" alt="Soluciones Empresariales" onerror="this.onerror=null; this.src='soluciones.png';">
                 </div>
+                <div class="feature-tag">Servicios Digitales & Cloud</div>
+                <ul class="feature-list">
+                    <li>Servicios Cloud y respaldo</li>
+                    <li>Ciberseguridad empresarial</li>
+                    <li>Líneas fijas e integraciones</li>
+                </ul>
                 <div class="card-content">
                     <div>
                         <h3 class="card-title">Soluciones</h3>
@@ -286,6 +326,12 @@
                 <div class="card-img-container">
                     <img src="Negocios.png" alt="Plan Negocios" onerror="this.onerror=null; this.src='negocios.png';">
                 </div>
+                <div class="feature-tag">Internet Fijo Empresarial</div>
+                <ul class="feature-list">
+                    <li>Hasta 100 MB de alta velocidad</li>
+                    <li>Atención y soporte técnico dedicado</li>
+                    <li>Conexión simultánea para múltiples equipos</li>
+                </ul>
                 <div class="card-content">
                     <div>
                         <h3 class="card-title">Negocios</h3>
