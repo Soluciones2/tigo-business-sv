@@ -114,18 +114,19 @@
 
         .card-img-container {
             width: 100%;
-            height: 220px;
-            background-color: #e5e7eb;
+            height: 240px;
+            background-color: #ffffff;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            padding: 10px;
         }
 
         .card-img-container img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain; /* Muestra la imagen completa sin recortarla */
         }
 
         .card-content {
@@ -227,7 +228,7 @@
             <!-- Tarjeta 1: Plan Emprendedor -->
             <div class="card">
                 <div class="card-img-container">
-                    <!-- Busca emprender14.png primero; si falla, intenta con emprendedor14.jpg -->
+                    <!-- Intenta cargar emprendedor14.png; si falla, busca emprendedor14.jpg -->
                     <img src="emprendedor14.png" alt="Plan Emprendedor" onerror="this.onerror=null; this.src='emprendedor14.jpg';">
                 </div>
                 <div class="card-content">
@@ -289,8 +290,7 @@
     <!-- Script para enviar datos a WhatsApp -->
     <script>
         function sendToWhatsApp(event) {
-            // Número de WhatsApp de recepción (código El Salvador +503)
-            var whatsappNumber = "50370000000"; // <--- Recuerda actualizar con tu número de WhatsApp real cuando desees
+            var whatsappNumber = "50370000000";
 
             var nombre = document.getElementById("nombre").value;
             var telefono = document.getElementById("telefono").value;
