@@ -227,7 +227,8 @@
             <!-- Tarjeta 1: Plan Emprendedor -->
             <div class="card">
                 <div class="card-img-container">
-                    <img src="Plan Emprendedor" alt="Plan Emprendedor" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'color:#6b7280;padding:20px;\'>[Error al cargar imagen]</span>';">
+                    <!-- Busca emprender14.png primero; si falla, intenta con emprendedor14.jpg -->
+                    <img src="emprendedor14.png" alt="Plan Emprendedor" onerror="this.onerror=null; this.src='emprendedor14.jpg';">
                 </div>
                 <div class="card-content">
                     <h3 class="card-title">Plan Emprendedor</h3>
@@ -289,7 +290,7 @@
     <script>
         function sendToWhatsApp(event) {
             // Número de WhatsApp de recepción (código El Salvador +503)
-            var whatsappNumber = "50370000000"; // <--- Coloca tu número real aquí cuando desees
+            var whatsappNumber = "50370000000"; // <--- Recuerda actualizar con tu número de WhatsApp real cuando desees
 
             var nombre = document.getElementById("nombre").value;
             var telefono = document.getElementById("telefono").value;
