@@ -79,7 +79,7 @@
 
         /* Planes y Ofertas */
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 3rem auto;
             padding: 0 1rem;
         }
@@ -93,7 +93,7 @@
 
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             justify-content: center;
         }
@@ -106,6 +106,9 @@
             border: 1px solid var(--gray-border);
             text-align: center;
             transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .card:hover {
@@ -126,11 +129,15 @@
         .card-img-container img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Muestra la imagen completa sin recortarla */
+            object-fit: contain; /* Ajusta la imagen completa sin recortarla */
         }
 
         .card-content {
             padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .card-title {
@@ -228,13 +235,42 @@
             <!-- Tarjeta 1: Plan Emprendedor -->
             <div class="card">
                 <div class="card-img-container">
-                    <!-- Intenta cargar emprendedor14.png; si falla, busca emprendedor14.jpg -->
                     <img src="emprendedor14.png" alt="Plan Emprendedor" onerror="this.onerror=null; this.src='emprendedor14.jpg';">
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">Plan Emprendedor</h3>
-                    <p>Internet rápido y estable diseñado para emprendedores, pequeños negocios y empresas.</p>
+                    <div>
+                        <h3 class="card-title">Plan Emprendedor</h3>
+                        <p>Internet rápido y estable diseñado para emprendedores, pequeños negocios y empresas.</p>
+                    </div>
                     <div class="price">$14.00 <span style="font-size: 0.9rem; font-weight: normal;">/ mes</span></div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2: Soluciones -->
+            <div class="card">
+                <div class="card-img-container">
+                    <img src="soluciones.png" alt="Soluciones Empresariales" onerror="this.onerror=null; this.src='soluciones.jpg';">
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">Soluciones</h3>
+                        <p>Planes a la medida con servicios integrados de conectividad y herramientas digitales.</p>
+                    </div>
+                    <div class="price">Cotizar</div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3: Negocios -->
+            <div class="card">
+                <div class="card-img-container">
+                    <img src="negocios.png" alt="Plan Negocios" onerror="this.onerror=null; this.src='negocios.jpg';">
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">Negocios</h3>
+                        <p>Infraestructura robusta para medianas y grandes empresas con soporte corporativo.</p>
+                    </div>
+                    <div class="price">Cotizar</div>
                 </div>
             </div>
 
@@ -268,6 +304,8 @@
                     <label for="plan">Plan de Interés:</label>
                     <select id="plan" name="Plan_Seleccionado" required>
                         <option value="Plan Emprendedor $14.00" selected>Plan Emprendedor - $14.00/mes</option>
+                        <option value="Soluciones Empresariales">Soluciones Empresariales</option>
+                        <option value="Plan Negocios">Plan Negocios</option>
                         <option value="Consulta General">Otra consulta / Cotización especial</option>
                     </select>
                 </div>
@@ -290,7 +328,7 @@
     <!-- Script para enviar datos a WhatsApp -->
     <script>
         function sendToWhatsApp(event) {
-            var whatsappNumber = "50370000000";
+            var whatsappNumber = "50360549695";
 
             var nombre = document.getElementById("nombre").value;
             var telefono = document.getElementById("telefono").value;
