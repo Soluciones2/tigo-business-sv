@@ -78,7 +78,7 @@
             opacity: 0.95;
         }
 
-        /* Planes y Ofertas ampliados */
+        /* Planes y Ofertas */
         .container {
             max-width: 1300px;
             margin: 3.5rem auto;
@@ -117,7 +117,7 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.12);
         }
 
-        /* Imagen en su estado original (sin estirar) */
+        /* Imagen en su estado original */
         .card-img-container {
             width: 100%;
             height: 260px;
@@ -277,7 +277,7 @@
         <h2 class="section-title">Ofertas Disponibles</h2>
         <div class="cards-grid">
             
-            <!-- Tarjeta 1: Plan Emprendedor -->
+            <!-- 1. Plan Emprendedor -->
             <div class="card">
                 <div class="card-img-container">
                     <img src="emprendedor14.png" alt="Plan Emprendedor" onerror="this.onerror=null; this.src='emprendedor14.jpg';">
@@ -297,27 +297,7 @@
                 </div>
             </div>
 
-            <!-- Tarjeta 2: Soluciones -->
-            <div class="card">
-                <div class="card-img-container">
-                    <img src="SOLUCIONES.png" alt="Soluciones Empresariales" onerror="this.onerror=null; this.src='soluciones.png';">
-                </div>
-                <div class="feature-tag">Servicios Digitales & Cloud</div>
-                <ul class="feature-list">
-                    <li>Servicios Cloud y respaldo</li>
-                    <li>Ciberseguridad empresarial</li>
-                    <li>Líneas fijas e integraciones</li>
-                </ul>
-                <div class="card-content">
-                    <div>
-                        <h3 class="card-title">Soluciones</h3>
-                        <p class="card-description">Planes a la medida con servicios integrados de conectividad y herramientas digitales.</p>
-                    </div>
-                    <div class="price">Cotizar</div>
-                </div>
-            </div>
-
-            <!-- Tarjeta 3: Negocios -->
+            <!-- 2. Negocios (Ahora en medio) -->
             <div class="card">
                 <div class="card-img-container">
                     <img src="Negocios.png" alt="Plan Negocios" onerror="this.onerror=null; this.src='negocios.png';">
@@ -332,6 +312,26 @@
                     <div>
                         <h3 class="card-title">Negocios</h3>
                         <p class="card-description">Infraestructura robusta para medianas y grandes empresas con soporte corporativo.</p>
+                    </div>
+                    <div class="price">Cotizar</div>
+                </div>
+            </div>
+
+            <!-- 3. Soluciones (Ahora al final) -->
+            <div class="card">
+                <div class="card-img-container">
+                    <img src="SOLUCIONES.png" alt="Soluciones Empresariales" onerror="this.onerror=null; this.src='soluciones.png';">
+                </div>
+                <div class="feature-tag">Servicios Digitales & Cloud</div>
+                <ul class="feature-list">
+                    <li>Servicios Cloud y respaldo</li>
+                    <li>Ciberseguridad empresarial</li>
+                    <li>Líneas fijas e integraciones</li>
+                </ul>
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">Soluciones</h3>
+                        <p class="card-description">Planes a la medida con servicios integrados de conectividad y herramientas digitales.</p>
                     </div>
                     <div class="price">Cotizar</div>
                 </div>
@@ -367,8 +367,8 @@
                     <label for="plan">Plan de Interés:</label>
                     <select id="plan" name="Plan_Seleccionado" required>
                         <option value="Plan Emprendedor $14.00" selected>Plan Emprendedor - $14.00/mes</option>
-                        <option value="Soluciones Empresariales">Soluciones Empresariales</option>
                         <option value="Plan Negocios">Plan Negocios</option>
+                        <option value="Soluciones Empresariales">Soluciones Empresariales</option>
                         <option value="Consulta General">Otra consulta / Cotización especial</option>
                     </select>
                 </div>
