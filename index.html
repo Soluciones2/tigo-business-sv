@@ -14,7 +14,6 @@
             --gray-border: #e0e6ed;
             --white: #ffffff;
             --whatsapp-green: #25d366;
-            --whatsapp-dark: #128c7e;
         }
 
         * {
@@ -44,6 +43,7 @@
         .logo {
             font-size: 1.7rem;
             font-weight: bold;
+            cursor: pointer;
         }
 
         nav a {
@@ -78,7 +78,7 @@
             opacity: 0.95;
         }
 
-        /* Planes y Ofertas */
+        /* Contenedor Principal */
         .container {
             max-width: 1300px;
             margin: 3.5rem auto;
@@ -92,6 +92,7 @@
             font-size: 2.4rem;
         }
 
+        /* Grid de Tarjetas de Oferta */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -117,7 +118,6 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.12);
         }
 
-        /* Imagen en su estado original */
         .card-img-container {
             width: 100%;
             height: 260px;
@@ -135,7 +135,6 @@
             object-fit: contain;
         }
 
-        /* Etiquetas para rellenar el espacio en blanco debajo de la imagen */
         .feature-tag {
             background-color: #eef4ff;
             color: var(--primary-blue);
@@ -194,51 +193,152 @@
             font-size: 2.1rem;
             font-weight: bold;
             color: var(--gray-dark);
-            margin: 1.2rem 0 0.5rem 0;
+            margin: 1.2rem 0 1rem 0;
         }
 
-        /* Formulario de Compra / Contacto */
-        .form-container {
+        .btn-cotizar {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-decoration: none;
+            padding: 0.9rem 1.8rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 6px;
+            transition: background 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+            border: none;
+            width: 100%;
+        }
+
+        .btn-cotizar:hover {
+            background-color: var(--secondary-blue);
+        }
+
+        /* ------------------------------------ */
+        /* VISTA DE COTIZACIÓN (2 COLUMNAS)    */
+        /* ------------------------------------ */
+        #vista-cotizacion {
+            display: none; /* Oculta por defecto */
+        }
+
+        .cotizacion-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
             background: var(--white);
-            padding: 3rem;
             border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-            max-width: 750px;
-            margin: 4rem auto;
-            border-top: 6px solid var(--primary-blue);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+            border: 1px solid var(--gray-border);
+            margin-top: 1.5rem;
+        }
+
+        /* Izquierda: Imagen y Encabezado de la Promoción */
+        .cotizacion-left {
+            flex: 1;
+            min-width: 320px;
+            background-color: #f8fafc;
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-right: 1px solid var(--gray-border);
+            text-align: center;
+        }
+
+        .cotizacion-left h2 {
+            color: var(--primary-blue);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cotizacion-left img {
+            max-width: 100%;
+            height: auto;
+            max-height: 320px;
+            object-fit: contain;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .cotizacion-left p {
+            font-size: 1.1rem;
+            color: #4a5568;
+            max-width: 450px;
+        }
+
+        /* Derecha: Formulario */
+        .cotizacion-right {
+            flex: 1;
+            min-width: 320px;
+            padding: 2.5rem;
+        }
+
+        .cotizacion-right h3 {
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cotizacion-right p {
+            color: #666;
+            margin-bottom: 1.8rem;
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.3rem;
             text-align: left;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         .form-group input, .form-group select, .form-group textarea {
             width: 100%;
-            padding: 0.9rem;
+            padding: 0.85rem;
             border: 1px solid var(--gray-border);
             border-radius: 6px;
-            font-size: 1.05rem;
+            font-size: 1rem;
+        }
+
+        .btn-volver {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+            padding: 0.6rem 1.2rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-bottom: 1rem;
+            transition: all 0.3s;
+        }
+
+        .btn-volver:hover {
+            background-color: var(--primary-blue);
+            color: var(--white);
         }
 
         .btn-submit {
             background-color: var(--primary-blue);
             color: var(--white);
             border: none;
-            padding: 1.2rem 2rem;
-            font-size: 1.2rem;
+            padding: 1rem 1.5rem;
+            font-size: 1.1rem;
             font-weight: bold;
             border-radius: 6px;
             cursor: pointer;
             width: 100%;
             transition: background 0.3s;
+            margin-top: 0.5rem;
         }
 
         .btn-submit:hover {
@@ -253,27 +353,36 @@
             margin-top: 5rem;
             font-size: 1rem;
         }
+
+        @media (max-width: 768px) {
+            .cotizacion-wrapper {
+                flex-direction: column;
+            }
+            .cotizacion-left {
+                border-right: none;
+                border-bottom: 1px solid var(--gray-border);
+            }
+        }
     </style>
 </head>
 <body>
 
     <!-- Encabezado -->
     <header>
-        <div class="logo">Tigo Business SV</div>
+        <div class="logo" onclick="volverAOfertas()">Tigo Business SV</div>
         <nav>
-            <a href="#ofertas">Ofertas</a>
-            <a href="#solicitar">Solicitar</a>
+            <a href="javascript:void(0)" onclick="volverAOfertas()">Ofertas</a>
         </nav>
     </header>
 
     <!-- Banner Principal -->
-    <section class="hero">
+    <section class="hero" id="hero-banner">
         <h1>Conectividad de Alta Velocidad para tu Negocio</h1>
         <p>Potencia tu emprendimiento o empresa con las mejores soluciones de internet y telefonía en El Salvador.</p>
     </section>
 
-    <!-- Sección de Ofertas -->
-    <section class="container" id="ofertas">
+    <!-- VISTA 1: Lista de Ofertas -->
+    <section class="container" id="vista-ofertas">
         <h2 class="section-title">Ofertas Disponibles</h2>
         <div class="cards-grid">
             
@@ -293,11 +402,14 @@
                         <h3 class="card-title">Plan Emprendedor</h3>
                         <p class="card-description">Internet rápido y estable diseñado para emprendedores, pequeños negocios y empresas.</p>
                     </div>
-                    <div class="price">$14.00 <span style="font-size: 1rem; font-weight: normal;">/ mes</span></div>
+                    <div>
+                        <div class="price">$14.00 <span style="font-size: 1rem; font-weight: normal;">/ mes</span></div>
+                        <button class="btn-cotizar" onclick="abrirCotizacion('Plan Emprendedor', 'emprendedor14.png', 'Internet rápido y estable diseñado para emprendedores, pequeños negocios y empresas.')">Contratar Plan</button>
+                    </div>
                 </div>
             </div>
 
-            <!-- 2. Negocios (Ahora en medio) -->
+            <!-- 2. Negocios -->
             <div class="card">
                 <div class="card-img-container">
                     <img src="Negocios.png" alt="Plan Negocios" onerror="this.onerror=null; this.src='negocios.png';">
@@ -313,11 +425,14 @@
                         <h3 class="card-title">Negocios</h3>
                         <p class="card-description">Infraestructura robusta para medianas y grandes empresas con soporte corporativo.</p>
                     </div>
-                    <div class="price">Cotizar</div>
+                    <div>
+                        <div class="price">Cotizar</div>
+                        <button class="btn-cotizar" onclick="abrirCotizacion('Plan Negocios', 'Negocios.png', 'Infraestructura robusta para medianas y grandes empresas con soporte corporativo.')">Cotizar Plan</button>
+                    </div>
                 </div>
             </div>
 
-            <!-- 3. Soluciones (Ahora al final) -->
+            <!-- 3. Soluciones -->
             <div class="card">
                 <div class="card-img-container">
                     <img src="SOLUCIONES.png" alt="Soluciones Empresariales" onerror="this.onerror=null; this.src='soluciones.png';">
@@ -333,53 +448,61 @@
                         <h3 class="card-title">Soluciones</h3>
                         <p class="card-description">Planes a la medida con servicios integrados de conectividad y herramientas digitales.</p>
                     </div>
-                    <div class="price">Cotizar</div>
+                    <div>
+                        <div class="price">Cotizar</div>
+                        <button class="btn-cotizar" onclick="abrirCotizacion('Soluciones Empresariales', 'SOLUCIONES.png', 'Planes a la medida con servicios integrados de conectividad y herramientas digitales.')">Cotizar Plan</button>
+                    </div>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- Formulario vinculado a Formspree y WhatsApp -->
-    <section class="container" id="solicitar">
-        <div class="form-container">
-            <h2 class="section-title" style="margin-bottom: 0.5rem; font-size: 2.1rem;">Solicitar Contratación</h2>
-            <p style="text-align: center; margin-bottom: 1.8rem; color: #666; font-size: 1.1rem;">Ingresa tus datos para procesar tu solicitud por correo y WhatsApp de inmediato.</p>
+    <!-- VISTA 2: Página de Cotización (2 Columnas) -->
+    <section class="container" id="vista-cotizacion">
+        <button class="btn-volver" onclick="volverAOfertas()">← Volver a Ofertas</button>
+        
+        <div class="cotizacion-wrapper">
             
-            <form id="contactForm" action="https://formspree.io/f/xyezlwaa" method="POST" onsubmit="sendToWhatsApp(event)">
-                
-                <div class="form-group">
-                    <label for="nombre">Nombre Completo o Empresa:</label>
-                    <input type="text" id="nombre" name="Nombre" required placeholder="Ej. Rodrigo Guevara / Comercial El Sol">
-                </div>
+            <!-- Columna Izquierda: Encabezado e Imagen de la Promoción -->
+            <div class="cotizacion-left">
+                <h2 id="promo-titulo">Plan Seleccionado</h2>
+                <img id="promo-imagen" src="" alt="Promoción Seleccionada">
+                <p id="promo-descripcion">Descripción del plan seleccionado.</p>
+            </div>
 
-                <div class="form-group">
-                    <label for="telefono">Teléfono / WhatsApp de Contacto:</label>
-                    <input type="tel" id="telefono" name="Telefono" required placeholder="Ej. 7000-0000">
-                </div>
+            <!-- Columna Derecha: Formulario -->
+            <div class="cotizacion-right">
+                <h3>Solicitar Cotización</h3>
+                <p>Completa tus datos para enviarte la información o contactarte directamente por WhatsApp.</p>
 
-                <div class="form-group">
-                    <label for="email">Correo Electrónico:</label>
-                    <input type="email" id="email" name="Correo" required placeholder="tu-correo@ejemplo.com">
-                </div>
+                <form id="contactForm" action="https://formspree.io/f/xyezlwaa" method="POST" onsubmit="sendToWhatsApp(event)">
+                    <input type="hidden" id="plan_input_oculto" name="Plan_Seleccionado" value="">
 
-                <div class="form-group">
-                    <label for="plan">Plan de Interés:</label>
-                    <select id="plan" name="Plan_Seleccionado" required>
-                        <option value="Plan Emprendedor $14.00" selected>Plan Emprendedor - $14.00/mes</option>
-                        <option value="Plan Negocios">Plan Negocios</option>
-                        <option value="Soluciones Empresariales">Soluciones Empresariales</option>
-                        <option value="Consulta General">Otra consulta / Cotización especial</option>
-                    </select>
-                </div>
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo o Empresa:</label>
+                        <input type="text" id="nombre" name="Nombre" required placeholder="Ej. Rodrigo Guevara / Comercial El Sol">
+                    </div>
 
-                <div class="form-group">
-                    <label for="ubicacion">Ubicación / Dirección de instalación:</label>
-                    <textarea id="ubicacion" name="Ubicacion" rows="3" placeholder="Indica el municipio o dirección para verificar cobertura..."></textarea>
-                </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono / WhatsApp de Contacto:</label>
+                        <input type="tel" id="telefono" name="Telefono" required placeholder="Ej. 7000-0000">
+                    </div>
 
-                <button type="submit" class="btn-submit">Enviar Solicitud por Correo y WhatsApp</button>
-            </form>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico:</label>
+                        <input type="email" id="email" name="Correo" required placeholder="tu-correo@ejemplo.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ubicacion">Ubicación / Dirección de instalación:</label>
+                        <textarea id="ubicacion" name="Ubicacion" rows="3" placeholder="Indica el municipio o dirección para verificar cobertura..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Enviar Solicitud por WhatsApp y Correo</button>
+                </form>
+            </div>
+
         </div>
     </section>
 
@@ -388,22 +511,46 @@
         <p>&copy; 2026 Soluciones Empresariales - Tigo Business SV. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Script para enviar datos a WhatsApp -->
+    <!-- Lógica JavaScript para cambio de pantalla y WhatsApp -->
     <script>
+        var planActual = "";
+
+        function abrirCotizacion(titulo, imagen, descripcion) {
+            planActual = titulo;
+            
+            // Actualizar vista izquierda con los datos de la promoción elegida
+            document.getElementById("promo-titulo").innerText = titulo;
+            document.getElementById("promo-imagen").src = imagen;
+            document.getElementById("promo-descripcion").innerText = descripcion;
+            document.getElementById("plan_input_oculto").value = titulo;
+
+            // Ocultar lista de ofertas y mostrar la vista de cotización
+            document.getElementById("vista-ofertas").style.display = "none";
+            document.getElementById("vista-cotizacion").style.display = "block";
+
+            // Desplazar suavemente hacia arriba
+            window.scrollTo({ top: 150, behavior: 'smooth' });
+        }
+
+        function volverAOfertas() {
+            document.getElementById("vista-cotizacion").style.display = "none";
+            document.getElementById("vista-ofertas").style.display = "block";
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
         function sendToWhatsApp(event) {
-            var whatsappNumber = "50370000000";
+            var whatsappNumber = "50370000000"; // Reemplazar con tu número de WhatsApp
 
             var nombre = document.getElementById("nombre").value;
             var telefono = document.getElementById("telefono").value;
             var email = document.getElementById("email").value;
-            var plan = document.getElementById("plan").value;
             var ubicacion = document.getElementById("ubicacion").value;
 
-            var mensaje = "¡Hola! Quisiera solicitar información sobre contratación:%0A%0A" +
+            var mensaje = "¡Hola! Quisiera cotizar el siguiente plan:%0A%0A" +
+                "*Plan:* " + encodeURIComponent(planActual) + "%0A" +
                 "*Nombre:* " + encodeURIComponent(nombre) + "%0A" +
                 "*Teléfono:* " + encodeURIComponent(telefono) + "%0A" +
                 "*Correo:* " + encodeURIComponent(email) + "%0A" +
-                "*Plan:* " + encodeURIComponent(plan) + "%0A" +
                 "*Ubicación:* " + encodeURIComponent(ubicacion);
 
             var whatsappUrl = "https://wa.me/" + whatsappNumber + "?text=" + mensaje;
