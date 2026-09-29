@@ -13,7 +13,6 @@
             --gray-light: #f4f6f9;
             --gray-border: #e0e6ed;
             --white: #ffffff;
-            --whatsapp-green: #25d366;
         }
 
         * {
@@ -194,6 +193,10 @@
             font-weight: bold;
             color: var(--gray-dark);
             margin: 1.2rem 0 1rem 0;
+            min-height: 2.8rem; /* Reserva espacio para alinear los botones */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .btn-cotizar {
@@ -215,11 +218,9 @@
             background-color: var(--secondary-blue);
         }
 
-        /* ------------------------------------ */
-        /* VISTA DE COTIZACIÓN (2 COLUMNAS)    */
-        /* ------------------------------------ */
+        /* VISTA DE COTIZACIÓN (2 COLUMNAS) */
         #vista-cotizacion {
-            display: none; /* Oculta por defecto */
+            display: none;
         }
 
         .cotizacion-wrapper {
@@ -234,7 +235,7 @@
             margin-top: 1.5rem;
         }
 
-        /* Izquierda: Imagen y Encabezado de la Promoción */
+        /* Columna Izquierda: Promoción */
         .cotizacion-left {
             flex: 1;
             min-width: 320px;
@@ -270,7 +271,7 @@
             max-width: 450px;
         }
 
-        /* Derecha: Formulario */
+        /* Columna Derecha: Formulario */
         .cotizacion-right {
             flex: 1;
             min-width: 320px;
@@ -403,7 +404,7 @@
                         <p class="card-description">Internet rápido y estable diseñado para emprendedores, pequeños negocios y empresas.</p>
                     </div>
                     <div>
-                        <div class="price">$14.00 <span style="font-size: 1rem; font-weight: normal;">/ mes</span></div>
+                        <div class="price">$14.00 <span style="font-size: 1rem; font-weight: normal; margin-left: 5px;">/ mes</span></div>
                         <button class="btn-cotizar" onclick="abrirCotizacion('Plan Emprendedor', 'emprendedor14.png', 'Internet rápido y estable diseñado para emprendedores, pequeños negocios y empresas.')">Contratar Plan</button>
                     </div>
                 </div>
@@ -426,7 +427,7 @@
                         <p class="card-description">Infraestructura robusta para medianas y grandes empresas con soporte corporativo.</p>
                     </div>
                     <div>
-                        <div class="price">Cotizar</div>
+                        <div class="price"></div> <!-- Espacio limpio sin texto -->
                         <button class="btn-cotizar" onclick="abrirCotizacion('Plan Negocios', 'Negocios.png', 'Infraestructura robusta para medianas y grandes empresas con soporte corporativo.')">Cotizar Plan</button>
                     </div>
                 </div>
@@ -449,7 +450,7 @@
                         <p class="card-description">Planes a la medida con servicios integrados de conectividad y herramientas digitales.</p>
                     </div>
                     <div>
-                        <div class="price">Cotizar</div>
+                        <div class="price"></div> <!-- Espacio limpio sin texto -->
                         <button class="btn-cotizar" onclick="abrirCotizacion('Soluciones Empresariales', 'SOLUCIONES.png', 'Planes a la medida con servicios integrados de conectividad y herramientas digitales.')">Cotizar Plan</button>
                     </div>
                 </div>
@@ -464,14 +465,14 @@
         
         <div class="cotizacion-wrapper">
             
-            <!-- Columna Izquierda: Encabezado e Imagen de la Promoción -->
+            <!-- Izquierda: Encabezado e Imagen de la Promoción -->
             <div class="cotizacion-left">
                 <h2 id="promo-titulo">Plan Seleccionado</h2>
                 <img id="promo-imagen" src="" alt="Promoción Seleccionada">
                 <p id="promo-descripcion">Descripción del plan seleccionado.</p>
             </div>
 
-            <!-- Columna Derecha: Formulario -->
+            <!-- Derecha: Formulario -->
             <div class="cotizacion-right">
                 <h3>Solicitar Cotización</h3>
                 <p>Completa tus datos para enviarte la información o contactarte directamente por WhatsApp.</p>
@@ -486,7 +487,7 @@
 
                     <div class="form-group">
                         <label for="telefono">Teléfono / WhatsApp de Contacto:</label>
-                        <input type="tel" id="telefono" name="Telefono" required placeholder="Ej. 7000-0000">
+                        <input type="tel" id="telefono" name="Telefono" required placeholder="Ej. 6054-9695">
                     </div>
 
                     <div class="form-group">
@@ -511,7 +512,7 @@
         <p>&copy; 2026 Soluciones Empresariales - Tigo Business SV. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Lógica JavaScript para cambio de pantalla y WhatsApp -->
+    <!-- Lógica JavaScript -->
     <script>
         var planActual = "";
 
@@ -528,7 +529,7 @@
             document.getElementById("vista-ofertas").style.display = "none";
             document.getElementById("vista-cotizacion").style.display = "block";
 
-            // Desplazar suavemente hacia arriba
+            // Desplazar suavemente hacia el formulario
             window.scrollTo({ top: 150, behavior: 'smooth' });
         }
 
@@ -539,7 +540,8 @@
         }
 
         function sendToWhatsApp(event) {
-            var whatsappNumber = "50370000000"; // Reemplazar con tu número de WhatsApp
+            // Número de WhatsApp configurado
+            var whatsappNumber = "50360549695"; 
 
             var nombre = document.getElementById("nombre").value;
             var telefono = document.getElementById("telefono").value;
